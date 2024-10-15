@@ -119,4 +119,5 @@ def resume8():
 def resume9():
     return render_template('Resume9.html')
 
-app = app
+if __name__ == '__main__':
+    app.run(debug=True)
