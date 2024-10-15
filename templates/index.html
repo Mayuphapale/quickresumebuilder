@@ -1,95 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <style>
-        img[alt="www.000webhost.com"] {
-            display: none;
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
-    <title>Quickie Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Resume</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pn3g5wUBemHcM+zG8eN5lEBR6V5q4MzYr1OZjJvN9h5pb+mqlQktw0OZxMoaPQe89rA1DAGbXnX+oI5L9j3OXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- CSS only -->
 </head>
-
-<body style="background-color:  #3090c7;">
-    <div class="container">
+<body>
+    <header>
         <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo"><img src="{{ url_for('static', filename='images/logo1.png') }}" width="120" height="80"></label>
-            <ul>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo">
+            </div>
+            <ul class="nav-links">
                 <li><a href="{{ url_for('step') }}">Create My Resume</a></li>
                 <li><a href="{{ url_for('template') }}">Resume Templates</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="{{ url_for('login') }}">Log in</a></li>
+                <li><a href="{{ url_for('login') }}" class="btn-outline">Log in</a></li>
             </ul>
-        </nav>
-        <div class="row" style="margin-top: 100px;">
-            <div class="col-1" style="margin-bottom: 20px;">
-                <img src="{{ url_for('static', filename='images/Bmiddle.png') }}" class="img" height="450">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="col-2" style="margin-bottom: 150px;">
-                <h1>Design Your Resume <br> & Prove yourself</h1>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Design Your Resume <br> & Prove Yourself</h1>
                 <a href="{{ url_for('step') }}" class="btn">BUILD MY RESUME</a>
             </div>
-        </div>
-        <div class="heding-section">
-            <h1 style="text-align: center; margin-top: 20px; font-weight: bolder; color: white; font-family: Trebuchet MS; letter-spacing: 10px;"> HOW IT WORKS</h1>
-            <P style="text-align: center; font-size: 25px; color: white;">Easy way to build your resume fast and quickly.</P>
-            <p style="text-align: center; font-size: 25px; color: white;">Just three simple steps.</p>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class=" content-section ">
-                    <div class="card ">
-                        <img src="{{ url_for('static', filename='images/custome.jpeg') }}">
-                        <h1>Select a template design</h1>
-                        <p>Quickie resume website provides you +professional templates.You just need to select template design. So as you see our Quickie resume's home page. Click on build my resume.There are easy and simple steps
-                        </p>
-                    </div>
-                    <div class="card " style="margin-bottom: 120px;">
-                        <img src="{{ url_for('static', filename='images/choose.jpeg') }}">
-                        <h1>Build your resume</h1>
-                        <p>Build your resume by customizing it by yourself. just fill your information. Edit your template by changing size, font style . Customize your resume like this. It is easy and simple to do.</p>
-                    </div>
-                    <div class="card " style="margin-bottom: 200px;">
-                        <img src="{{ url_for('static', filename='images/dw.jpeg') }}">
-                        <h1>Download as a PDF</h1>
-                        <p>As you build your resume,after that "Hit Download" button. and save your resume as pdf.</p>
-                    </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/Bmiddle.png') }}" alt="Hero Image">
+            </div>
+        </section>
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <p>Easy way to build your resume fast and quickly. Just three simple steps.</p>
+            <div class="steps">
+                <div class="step card">
+                    <img src="{{ url_for('static', filename='images/custome.jpeg') }}" alt="Step 1">
+                    <h3>Select a Template</h3>
+                    <p>Choose from our professional templates.</p>
+                </div>
+                <div class="step card">
+                    <img src="{{ url_for('static', filename='images/choose.jpeg') }}" alt="Step 2">
+                    <h3>Customize Your Resume</h3>
+                    <p>Fill in your information and customize the design.</p>
+                </div>
+                <div class="step card">
+                    <img src="{{ url_for('static', filename='images/dw.jpeg') }}" alt="Step 3">
+                    <h3>Download as PDF</h3>
+                    <p>Download your resume in PDF format.</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="footer-left">
-            <p>Welcome to QuickeResume !! Here we will make your work more simpler and easier. By accessing our website you will be avail with multiple features. QuickieResume is very effective and relevant to our user . And will ensure best to you.</p>
-        </div>
-        <div class="footer-center">
-            <h2>Useful Links</h2>
-            <ul class="box">
-                <li><a href="{{ url_for('blog') }}">Blogs</a></li>
-                <li><a href="{{ url_for('how') }}">How it works</a></li>
-                <li><a href="{{ url_for('ben') }}">Benefits</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-right">
-            <ul class="box">
-                <li><img src="{{ url_for('static', filename='images/loco.png') }}" width="40" height="40"></li>
-                <p style="margin-top: -30px; margin-left: 60px; font-size: 20px;">Mumbai</p>
-                <li> <img src="{{ url_for('static', filename='images/mail.png') }}" width="40" height="40" style="color: white; margin-top: 20px;">
-                    <a href="#" style="margin-top: -50px; margin-left: 10px; font-size: 20px; color: white;">quickieresume@gmail.com</a>
-                </li>
-            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Welcome to QuickResume! Here we make your work simpler and easier. QuickResume ensures the best experience for you.</p>
+            </div>
+            <div class="footer-center">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('blog') }}">Blogs</a></li>
+                    <li><a href="{{ url_for('how') }}">How it works</a></li>
+                    <li><a href="{{ url_for('ben') }}">Benefits</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Mumbai</p>
+                <p><i class="fas fa-envelope"></i> quickresumemaker@gmail.com</p>
+            </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
